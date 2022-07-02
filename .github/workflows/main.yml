@@ -1,21 +1,11 @@
 name: Norminette
-
-on:
-  push:
-    branches: [ "master" ]
-  pull_request:
-    branches: [ "master" ]
-
-  workflow_dispatch:
-
+on: [push, pull_request]
 jobs:
-  build:
+  norminette_job:
     runs-on: ubuntu-latest
-
+    name: norminette
     steps:
-      - name: 42 Norminette
-        - uses: actions/checkout@v2
-        - uses: alexandregv/norminette-action@v2
-          with:
-            # Flags passed to norminette
-            flags: '.'
+    - uses: actions/checkout@v2
+    - uses: alexandregv/norminette-action@v2
+      with:
+        flags: '.'
