@@ -1,0 +1,1 @@
+# cpiscine-rush-00
