@@ -1,0 +1,20 @@
+name: Norminette
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 42 Norminette
+        uses: alexandregv/norminette-action@v2
+        with:
+        # Flags passed to norminette
+          flags: '.'
